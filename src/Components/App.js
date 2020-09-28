@@ -42,7 +42,7 @@ export default () => {
   return (
     <ThemeProvider theme={Theme}>
       <Helmet>
-        <title>Facebook</title>
+        <title>Portfolio</title>
       </Helmet>
       <RootWrapper>
         <GlobalStyles />
