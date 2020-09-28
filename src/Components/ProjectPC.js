@@ -35,12 +35,25 @@ const ThumbContainer = styled.div`
   position: relative;
 `;
 
-const Thumb = styled.img`
+const Thumb = styled.div`
+  width: 100%;
+  max-width: 105rem;
+  height: 60rem;
+  border-radius: 10px;
+  position: absolute;
+  background: #ffffff20;
+  top: 0;
+  right: 1rem;
+  bottom: 3rem;
+  margin: auto 0;
+`;
+
+const ThumbImg = styled.img`
   width: 100%;
   max-width: 100rem;
   border-radius: 10px;
   position: absolute;
-  top: 0;
+  top: 3rem;
   right: 1rem;
   bottom: 0;
   margin: auto 0;
@@ -97,7 +110,9 @@ const ProjectPC = ({ className }) => {
       <Container>
         <Link to="/">
           <ThumbContainer src="http://placehold.it/720x480">
-            <Thumb src="http://placehold.it/550x348" />
+            <Thumb>
+              <ThumbImg src="http://placehold.it/550x348" />
+            </Thumb>
           </ThumbContainer>
           <MetaContainer>
             <Meta>Category / PROJECT</Meta>
