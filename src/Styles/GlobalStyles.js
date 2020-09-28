@@ -10,7 +10,7 @@ export default createGlobalStyle`
     background-color: ${({ theme }) => theme.backgoundColor};
     color: ${({ theme }) => theme.blackColor};
     font-size: 10px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', 'Open Sans', sans-serif;
   }
   a {
     color: inherit;
