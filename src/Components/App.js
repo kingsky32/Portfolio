@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet";
 import Header from "./Header";
 import MenuButton from "./MenuButton";
 import Copyright from "./Copyright";
+import Menu from "./Menu";
 
 const RootWrapper = styled.div``;
 
@@ -17,8 +18,17 @@ export default () => {
   const [darkmode, setDarkMode] = useState(
     window.matchMedia("(prefers-color-scheme: dark)").matches
   );
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
 
   const onToggleDarkmode = () => setDarkMode(prev => !prev);
+
+  const onToggleMenu = () => {
+    setIsOpenMenu(prev => !prev);
+  };
+
+  const onCloseMenu = () => {
+    setIsOpenMenu(false);
+  };
 
   useEffect(() => {
     window
@@ -28,6 +38,7 @@ export default () => {
         event => (event.matches ? setDarkMode(true) : setDarkMode(false))
       );
   }, []);
+
   return (
     <ThemeProvider theme={Theme}>
       <Helmet>
@@ -38,9 +49,10 @@ export default () => {
         <Router>
           <Wrapper>
             <Header onToggleDarkmode={onToggleDarkmode} />
-            <MenuButton />
+            <MenuButton isOpenMenu={isOpenMenu} onToggleMenu={onToggleMenu} />
+            {isOpenMenu && <Menu />}
             <Copyright />
-            <Routes darkmode={darkmode} />
+            <Routes onCloseMenu={onCloseMenu} darkmode={darkmode} />
           </Wrapper>
         </Router>
       </RootWrapper>

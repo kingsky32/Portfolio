@@ -12,6 +12,7 @@ const Container = styled.header`
   padding: 3rem 0;
   position: fixed;
   left: 5rem;
+  z-index: 50;
 `;
 
 const LogoContainer = styled.h1`

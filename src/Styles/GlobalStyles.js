@@ -7,17 +7,17 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   html, body {
-    background-color: ${props => props.theme.bgColor};
-    color: ${props => props.theme.blackColor};
+    background-color: ${({ theme }) => theme.backgoundColor};
+    color: ${({ theme }) => theme.blackColor};
     font-size: 10px;
     font-family: 'Open Sans', sans-serif;
   }
   a {
     color: inherit;
-    text-decoration:none;
+    text-decoration: none;
   }
   input:focus{
-    outline:none;
+    outline: none;
   }
   textarea {
     font: inherit;

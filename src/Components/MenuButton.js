@@ -24,6 +24,7 @@ const Container = styled.div`
   width: 5rem;
   height: 2.1rem;
   position: fixed;
+  z-index: 50;
   top: 5rem;
   right: 5rem;
   cursor: pointer;
@@ -43,9 +44,9 @@ const Container = styled.div`
   }
 `;
 
-const MenuButton = ({ onMenuClick, isOpenMenu }) => {
+const MenuButton = ({ isOpenMenu, onToggleMenu }) => {
   return (
-    <Container>
+    <Container onClick={onToggleMenu}>
       <Line>1</Line>
       <Line>2</Line>
       <Line>3</Line>
