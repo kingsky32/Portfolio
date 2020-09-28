@@ -11,6 +11,7 @@ const Container = styled.header`
   align-items: center;
   padding: 3rem 0;
   position: fixed;
+  top: 0;
   left: 5rem;
   z-index: 50;
 `;

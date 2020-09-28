@@ -7,6 +7,7 @@ const Container = styled.span`
   position: fixed;
   top: 25rem;
   right: -7rem;
+  z-index: 50;
 `;
 
 const Copyright = () => {

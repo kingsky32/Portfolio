@@ -12,7 +12,7 @@ import Menu from "./Menu";
 
 const RootWrapper = styled.div``;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`padding: 15rem 0;`;
 
 export default () => {
   const [darkmode, setDarkMode] = useState(

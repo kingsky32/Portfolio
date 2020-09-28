@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Logo } from "../Components/Icons";
 import ProjectPC from "../Components/ProjectPC";
 import SubTitle from "../Components/SubTitle";
+import Contact from "../Components/Contact";
 
 const Container = styled.div`
   width: 80%;
@@ -10,7 +11,7 @@ const Container = styled.div`
 `;
 
 const TitleContainer = styled.div`
-  padding-top: 50vh;
+  padding-top: 35vh;
   display: flex;
   flex-flow: column nowrap;
   margin: 0 10% 15rem;
@@ -39,6 +40,7 @@ const WorksSubTitle = styled(SubTitle)`
 const WorksContainer = styled.div`
   display: flex;
   flex-flow: column nowrap;
+  margin-bottom: 20rem;
 `;
 
 const Work = styled(ProjectPC)`
@@ -52,6 +54,8 @@ const Work = styled(ProjectPC)`
   }
 `;
 
+const MoreSubTitle = styled(SubTitle)`margin: 0 auto 20rem;`;
+
 const Home = () => {
   return (
     <Container>
@@ -60,13 +64,15 @@ const Home = () => {
         <MetaTitle>Design + Front-end + Back-end</MetaTitle>
         <MetaContent>‘Seung Ju’ is creative design and developer.</MetaContent>
       </TitleContainer>
-      <WorksSubTitle text="Works" />
+      <WorksSubTitle text="Works" url="/works" />
       <WorksContainer>
         <Work />
         <Work />
         <Work />
         <Work />
       </WorksContainer>
+      <MoreSubTitle text="MORE" url="/works" />
+      <Contact />
     </Container>
   );
 };

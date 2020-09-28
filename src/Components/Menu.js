@@ -9,6 +9,8 @@ const Container = styled.div`
   background-color: ${({ theme }) => theme.backgroundColor};
   overflow: hidden;
   position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;

@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.a`
   display: flex;
   align-items: center;
+  width: 14rem;
   font-size: 1.4rem;
   color: ${({ theme }) => theme.blackColor};
   &::after {
@@ -16,9 +17,9 @@ const Container = styled.div`
   }
 `;
 
-const SubTitle = ({ className, text }) => {
+const SubTitle = ({ className, text, url }) => {
   return (
-    <Container className={className}>
+    <Container href={url} className={className}>
       {text}
     </Container>
   );
