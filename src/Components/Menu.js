@@ -25,7 +25,7 @@ const Navigation = styled.li`
   &:not(:last-child) {
     margin-bottom: 5rem;
   }
-  transition: .3s opacity;
+  ${({ theme }) => theme.transition};
   &:not(:hover) {
     opacity: .5;
   }
@@ -41,7 +41,7 @@ const Navigation = styled.li`
       display: block;
       position: absolute;
       width: 0;
-      transition: .3s width;
+      ${({ theme }) => theme.transition};
       height: .6rem;
       top: 1rem;
       bottom: 0;

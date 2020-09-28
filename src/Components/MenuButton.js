@@ -8,7 +8,7 @@ const Line = styled.span`
   background-color: ${({ theme }) => theme.greyColor};
   text-indent: -999999px;
   position: absolute;
-  transition: .25s top ease-out;
+  ${({ theme }) => theme.transition};
   &:nth-child(1) {
     top: 0;
   }
