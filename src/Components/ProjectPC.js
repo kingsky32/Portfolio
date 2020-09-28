@@ -9,6 +9,7 @@ const Container = styled.div`
   width: 76%;
   height: 80rem;
   margin-bottom: 4.5rem;
+  margin-left: .5rem;
   > a {
     display: block;
     width: 100%;
