@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+const Wrapper = styled.div`overflow: hidden;`;
+
 const Container = styled.div`
   position: relative;
   width: 76%;
   height: 80rem;
   margin-bottom: 4.5rem;
-
   > a {
     display: block;
     width: 100%;
@@ -89,22 +90,24 @@ const Caption = styled.span`
   color: ${({ theme }) => theme.darkGreyColor};
 `;
 
-const ProjectPC = () => {
+const ProjectPC = ({ className }) => {
   return (
-    <Container>
-      <Link to="/">
-        <ThumbContainer src="http://placehold.it/720x480">
-          <Thumb src="http://placehold.it/550x348" />
-        </ThumbContainer>
-        <MetaContainer>
-          <Meta>Category / PROJECT</Meta>
-        </MetaContainer>
-        <TitleContainer>
-          <Title>Project</Title>
-          <Caption>Project Caption</Caption>
-        </TitleContainer>
-      </Link>
-    </Container>
+    <Wrapper className={className}>
+      <Container>
+        <Link to="/">
+          <ThumbContainer src="http://placehold.it/720x480">
+            <Thumb src="http://placehold.it/550x348" />
+          </ThumbContainer>
+          <MetaContainer>
+            <Meta>Category / PROJECT</Meta>
+          </MetaContainer>
+          <TitleContainer>
+            <Title>Project</Title>
+            <Caption>Project Caption</Caption>
+          </TitleContainer>
+        </Link>
+      </Container>
+    </Wrapper>
   );
 };
 

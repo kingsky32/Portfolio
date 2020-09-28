@@ -41,7 +41,7 @@ const WorksContainer = styled.div`
   flex-flow: column nowrap;
 `;
 
-const Work = styled.div`
+const Work = styled(ProjectPC)`
   display: flex;
   justify-content: flex-end;
   &:not(:last-child) {
@@ -62,18 +62,10 @@ const Home = () => {
       </TitleContainer>
       <WorksSubTitle text="Works" />
       <WorksContainer>
-        <Work>
-          <ProjectPC />
-        </Work>
-        <Work>
-          <ProjectPC />
-        </Work>
-        <Work>
-          <ProjectPC />
-        </Work>
-        <Work>
-          <ProjectPC />
-        </Work>
+        <Work />
+        <Work />
+        <Work />
+        <Work />
       </WorksContainer>
     </Container>
   );
