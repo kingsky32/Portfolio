@@ -5,14 +5,18 @@ import styled from "styled-components";
 const LinkContainer = styled(Link)`
   display: flex;
   align-items: center;
-  width: 14rem;
+  width: 20rem;
   font-size: 1.4rem;
   color: ${({ theme }) => theme.blackColor};
+  &:hover::after {
+    width: 12rem;
+  }
   &::after {
     content: '';
     display: block;
     width: 8rem;
     height: 1px;
+    ${({ theme }) => theme.transition};
     background-color: ${({ theme }) => theme.blackColor};
     margin-left: 2rem;
   }
