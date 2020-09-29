@@ -10,8 +10,8 @@ const Container = styled.span`
   z-index: 50;
 `;
 
-const Copyright = () => {
-  return <Container>&copy;2020. Seung Ju PortFolio All rights reserved.</Container>;
+const Copyright = ({ id }) => {
+  return <Container id={id}>&copy;2020. Seung Ju PortFolio All rights reserved.</Container>;
 };
 
 export default Copyright;

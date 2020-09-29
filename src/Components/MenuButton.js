@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { TweenLite, Power1 } from "gsap";
 
@@ -23,24 +23,23 @@ const Line = styled.span`
 const Container = styled.div`
   width: 5rem;
   height: 2.1rem;
-  position: fixed;
-  z-index: 50;
+  cursor: pointer;
   top: 5rem;
   right: 5rem;
-  cursor: pointer;
+  position: fixed;
+  z-index: 50;
 `;
 
-const MenuButton = ({ isOpenMenu, onToggleMenu }) => {
+const MenuButton = ({ id, isOpenMenu, onToggleMenu }) => {
   const [isOpenMenuLoading, setIsOpenMenuLoading] = useState(false);
   const duration = 0.3;
   const delay = 0.5;
-  const onClick = () => {
+  const menuFn = () => {
     if (!isOpenMenuLoading) {
       setIsOpenMenuLoading(true);
       setTimeout(() => {
         setIsOpenMenuLoading(false);
       }, 500);
-      onToggleMenu();
       if (isOpenMenu) {
         TweenLite.to("#ln1, #ln3", {
           duration,
@@ -113,8 +112,17 @@ const MenuButton = ({ isOpenMenu, onToggleMenu }) => {
       });
     }
   };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => menuFn, [isOpenMenu]);
+
   return (
-    <Container onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={onClick}>
+    <Container
+      id={id}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onClick={onToggleMenu}
+    >
       <Line id="ln1">1</Line>
       <Line id="ln2">2</Line>
       <Line id="ln3">3</Line>

@@ -53,7 +53,7 @@ const DarkButton = styled.button`
   }
 `;
 
-const Header = ({ onToggleDarkmode }) => {
+const Header = ({ id, onToggleDarkmode }) => {
   const [scrollValue, setScrollValue] = useState(-100);
 
   const getScrollValue = () => {
@@ -71,7 +71,7 @@ const Header = ({ onToggleDarkmode }) => {
   }, []);
 
   return (
-    <Container>
+    <Container id={id}>
       <LogoContainer>
         <Link to="/">
           <Favicon />

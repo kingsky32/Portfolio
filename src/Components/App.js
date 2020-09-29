@@ -9,6 +9,8 @@ import Header from "./Header";
 import MenuButton from "./MenuButton";
 import Copyright from "./Copyright";
 import Menu from "./Menu";
+import { TweenLite } from "gsap/gsap-core";
+import { Power1 } from "gsap/gsap-core";
 
 const RootWrapper = styled.div``;
 
@@ -19,7 +21,7 @@ export default () => {
     window.matchMedia("(prefers-color-scheme: dark)").matches
   );
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-
+  const duration = 0.3;
   const onToggleDarkmode = () => setDarkMode(prev => !prev);
 
   const onToggleMenu = () => {
@@ -31,6 +33,20 @@ export default () => {
   };
 
   useEffect(() => {
+    TweenLite.fromTo(
+      "#hd, #mu, #cr",
+      {
+        opacity: 0,
+        translateY: "2rem"
+      },
+      {
+        delay: 5.5,
+        duration,
+        opacity: 1,
+        translateY: "0",
+        ease: Power1
+      }
+    );
     window
       .matchMedia("(prefers-color-scheme: dark)")
       .addEventListener(
@@ -48,10 +64,10 @@ export default () => {
         <GlobalStyles />
         <Router>
           <Wrapper>
-            <Header onToggleDarkmode={onToggleDarkmode} />
-            <MenuButton isOpenMenu={isOpenMenu} onToggleMenu={onToggleMenu} />
+            <Header id="hd" onToggleDarkmode={onToggleDarkmode} />
+            <MenuButton id="mu" isOpenMenu={isOpenMenu} onToggleMenu={onToggleMenu} />
+            <Copyright id="cr" />
             {isOpenMenu && <Menu />}
-            <Copyright />
             <Routes onCloseMenu={onCloseMenu} darkmode={darkmode} />
           </Wrapper>
         </Router>

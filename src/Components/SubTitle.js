@@ -38,12 +38,12 @@ const Container = styled.span`
   }
 `;
 
-const SubTitle = ({ className, text, url }) => {
+const SubTitle = ({ id, className, text, url }) => {
   return url
-    ? <LinkContainer to={url} className={className}>
+    ? <LinkContainer id={id} to={url} className={className}>
         {text}
       </LinkContainer>
-    : <Container className={className}>
+    : <Container id={id} className={className}>
         {text}
       </Container>;
 };
