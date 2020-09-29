@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Theme from "../Styles/Theme";
 import Routes from "./Routes";
 import GlobalStyles from "../Styles/GlobalStyles";

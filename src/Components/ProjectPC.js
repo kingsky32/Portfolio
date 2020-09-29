@@ -53,10 +53,10 @@ const Title = styled.span`
   left: 2.5rem;
 `;
 
-const ProjectPC = ({ className, background, thumb, project }) => {
+const ProjectPC = ({ className, background, thumb, project, id }) => {
   return (
     <Container className={className}>
-      <Link to="/">
+      <Link to={`/works/${id}`}>
         <ThumbContainer src={background} alt={project}>
           <Thumb src={thumb} />
           <Title>

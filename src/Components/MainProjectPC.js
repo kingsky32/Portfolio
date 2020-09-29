@@ -105,11 +105,11 @@ const Caption = styled.span`
   color: ${({ theme }) => theme.darkGreyColor};
 `;
 
-const MainProjectPC = ({ className, background, thumb, project, caption, category }) => {
+const MainProjectPC = ({ className, background, thumb, project, caption, category, id }) => {
   return (
     <Wrapper className={className}>
       <Container>
-        <Link to="/">
+        <Link to={`/works/${id}`}>
           <ThumbContainer src={background}>
             <Thumb>
               <ThumbImg src={thumb} />

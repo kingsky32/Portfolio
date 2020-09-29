@@ -54,14 +54,15 @@ const DarkButton = styled.button`
 `;
 
 const Header = ({ onToggleDarkmode }) => {
-  const [scrollValue, setScrollValue] = useState(0);
+  const [scrollValue, setScrollValue] = useState(-100);
 
   const getScrollValue = () => {
     const scrollPosition = document.documentElement.scrollTop;
     const windowHeight = window.innerHeight;
     const fullHeight = document.body.scrollHeight;
     const scrollWidth = -(scrollPosition / (windowHeight - fullHeight) * 100 + 100);
-    setScrollValue(scrollWidth);
+    if (scrollPosition + windowHeight >= fullHeight) setScrollValue(0);
+    else setScrollValue(scrollWidth);
   };
 
   useEffect(() => {
