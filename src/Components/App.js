@@ -33,20 +33,13 @@ export default () => {
   };
 
   useEffect(() => {
-    TweenLite.fromTo(
-      "#hd, #mu, #cr",
-      {
-        opacity: 0,
-        translateY: "2rem"
-      },
-      {
-        delay: 5.5,
-        duration,
-        opacity: 1,
-        translateY: "0",
-        ease: Power1
-      }
-    );
+    TweenLite.from("#hd, #mu, #cr", {
+      delay: 5.5,
+      duration,
+      opacity: 0,
+      translateY: "2rem",
+      ease: Power1
+    });
     window
       .matchMedia("(prefers-color-scheme: dark)")
       .addEventListener(

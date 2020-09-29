@@ -43,9 +43,9 @@ const Contact = ({ icon, text }) =>
     </Text>
   </ContactContainer>;
 
-export default () => {
+export default ({ id }) => {
   return (
-    <Container>
+    <Container id={id}>
       <SubTitle text="Contact" url="/contact" />
       <Contacts>
         <Contact icon={<Call size="1.6rem" />} text="010. 8327. 3235" />
