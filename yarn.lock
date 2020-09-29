@@ -1632,14 +1632,14 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
 
-"@types/react-dom@*":
+"@types/react-dom@*", "@types/react-dom@^16.9.6":
   version "16.9.8"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.8.tgz#fe4c1e11dfc67155733dfa6aa65108b4971cb423"
   integrity sha512-ykkPQ+5nFknnlU6lDd947WbQ6TE3NNzbQAkInC2EKY1qeYdTKp7onFusmYZb+ityzx2YviqT6BXSu+LyWWJwcA==
   dependencies:
     "@types/react" "*"
 
-"@types/react@*":
+"@types/react@*", "@types/react@^16.9.49":
   version "16.9.49"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.49.tgz#09db021cf8089aba0cdb12a49f8021a69cce4872"
   integrity sha512-DtLFjSj0OYAdVLBbyjhuV9CdGVHCkHn2R+xr3XkBvK2rS1Y1tkc14XSGjYgm5Fjjr90AxH9tiSzc1pCFMGO06g==
@@ -2982,6 +2982,11 @@ clean-css@^4.2.3:
   integrity sha512-VcMWDN54ZN/DS+g58HYL5/n4Zrqe8vHJpGA8KdgUXFU4fuP/aHNw8eld9SyEIyabIMJX/0RaY/fplOo5hYLSFA==
   dependencies:
     source-map "~0.6.0"
+
+clean-react-props@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/clean-react-props/-/clean-react-props-0.4.0.tgz#68642be5538a5fece380fed704a560de2db67954"
+  integrity sha512-8KKm9sC/cUax4SBWwSY5a3W44aJKOUQg39Bo3fRErp3/mF8D1kMN9xc1lvQGmvkK/AmpH2Xh/UYVZOJMcxoy9w==
 
 clean-stack@^2.0.0:
   version "2.2.0"
@@ -6620,6 +6625,11 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "^3.0.0"
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
+
 lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
@@ -8832,6 +8842,17 @@ react-scripts@3.4.3:
     workbox-webpack-plugin "4.3.1"
   optionalDependencies:
     fsevents "2.1.2"
+
+react-scroll-trigger@^0.6.9:
+  version "0.6.9"
+  resolved "https://registry.yarnpkg.com/react-scroll-trigger/-/react-scroll-trigger-0.6.9.tgz#8381afed479bf570c5dfb0577affdeb52223e3ad"
+  integrity sha512-aiVKJWPijIvf86OlpMzW//BMvSq2Q7Ea/icIaukSV55tXRh6Al7YjFRyhwi96HxRJRezRYoKWmuACOIBchNqKA==
+  dependencies:
+    "@types/react" "^16.9.49"
+    "@types/react-dom" "^16.9.6"
+    clean-react-props "^0.4.0"
+    lodash.throttle "^4.1.1"
+    prop-types "^15.7.2"
 
 react-side-effect@^2.1.0:
   version "2.1.0"
