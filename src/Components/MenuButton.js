@@ -32,6 +32,8 @@ const Container = styled.div`
 
 const MenuButton = ({ isOpenMenu, onToggleMenu }) => {
   const [isOpenMenuLoading, setIsOpenMenuLoading] = useState(false);
+  const duration = 0.3;
+  const delay = 0.5;
   const onClick = () => {
     if (!isOpenMenuLoading) {
       setIsOpenMenuLoading(true);
@@ -41,42 +43,42 @@ const MenuButton = ({ isOpenMenu, onToggleMenu }) => {
       onToggleMenu();
       if (isOpenMenu) {
         TweenLite.to("#ln1, #ln3", {
-          duration: 0.3,
+          duration,
           rotate: 0,
           ease: Power1
         });
         TweenLite.to("#ln2", {
-          duration: 0.3,
+          duration,
           rotate: 0,
           ease: Power1
         });
         TweenLite.to("#ln1", {
-          delay: 0.5,
-          duration: 0.3,
+          delay,
+          duration,
           top: "0",
           ease: Power1
         });
         TweenLite.to("#ln3", {
-          delay: 0.5,
-          duration: 0.3,
+          delay,
+          duration,
           top: "1.8rem",
           ease: Power1
         });
       } else {
         TweenLite.to("#ln1, #ln3", {
-          duration: 0.3,
+          duration,
           top: ".9rem",
           ease: Power1
         });
         TweenLite.to("#ln1, #ln3", {
-          delay: 0.5,
-          duration: 0.3,
+          delay,
+          duration,
           rotate: 45,
           ease: Power1
         });
         TweenLite.to("#ln2", {
-          delay: 0.5,
-          duration: 0.3,
+          delay,
+          duration,
           rotate: -45,
           ease: Power1
         });
@@ -86,12 +88,12 @@ const MenuButton = ({ isOpenMenu, onToggleMenu }) => {
   const onMouseEnter = () => {
     if (!isOpenMenuLoading && !isOpenMenu) {
       TweenLite.to("#ln1", {
-        duration: 0.3,
+        duration,
         top: "-.2rem",
         ease: Power1
       });
       TweenLite.to("#ln3", {
-        duration: 0.3,
+        duration,
         top: "2rem",
         ease: Power1
       });
@@ -100,12 +102,12 @@ const MenuButton = ({ isOpenMenu, onToggleMenu }) => {
   const onMouseLeave = () => {
     if (!isOpenMenuLoading && !isOpenMenu) {
       TweenLite.to("#ln1", {
-        duration: 0.3,
+        duration,
         top: "0",
         ease: Power1
       });
       TweenLite.to("#ln3", {
-        duration: 0.3,
+        duration,
         top: "1.8rem",
         ease: Power1
       });
