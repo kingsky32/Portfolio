@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Container = styled.a`
+const Container = styled(Link)`
   display: flex;
   align-items: center;
   width: 14rem;
@@ -19,7 +20,7 @@ const Container = styled.a`
 
 const SubTitle = ({ className, text, url }) => {
   return (
-    <Container href={url} className={className}>
+    <Container to={url} className={className}>
       {text}
     </Container>
   );

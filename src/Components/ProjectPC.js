@@ -2,14 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Wrapper = styled.div`overflow: hidden;`;
-
 const Container = styled.div`
-  position: relative;
-  width: 76%;
-  height: 80rem;
-  margin-bottom: 4.5rem;
-  margin-left: .5rem;
+  width: 100%;
+  height: 78rem;
   > a {
     display: block;
     width: 100%;
@@ -35,95 +30,41 @@ const ThumbContainer = styled.div`
   position: relative;
 `;
 
-const Thumb = styled.div`
-  width: 100%;
-  max-width: 105rem;
-  height: 60rem;
+const Thumb = styled.img`
+  width: 95%;
+  height: 70%;
+  object-fit: cover;
   border-radius: 10px;
   position: absolute;
-  background: #ffffff20;
   top: 0;
-  right: 1rem;
-  bottom: 3rem;
-  margin: auto 0;
-`;
-
-const ThumbImg = styled.img`
-  width: 100%;
-  max-width: 100rem;
-  border-radius: 10px;
-  position: absolute;
-  top: 3rem;
-  right: 1rem;
-  bottom: 0;
-  margin: auto 0;
+  bottom: 2.5rem;
+  left: 0;
+  right: 0;
+  margin: auto;
   ${({ theme }) => theme.transition};
 `;
 
-const MetaContainer = styled.div`
-  position: absolute;
-  width: 100%;
-  right: 0;
-  transform: rotate(-90deg);
-  transform-origin: left;
-  display: flex;
-  align-items: center;
-  bottom: 5rem;
-  &::before {
-    content: '';
-    display: block;
-    width: 8rem;
-    height: 1px;
-    background-color: ${({ theme }) => theme.darkGreyColor};
-    margin-right: 2rem;
-  }
-`;
-
-const Meta = styled.span`
-  font-size: 1.4rem;
-  font-weight: 300;
-  color: ${({ theme }) => theme.darkGreyColor};
-`;
-
-const TitleContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 2rem;
-`;
-
 const Title = styled.span`
-  font-size: 2rem;
-  font-weight: 500;
-  color: ${({ theme }) => theme.blackColor};
-  margin-right: 4rem;
-`;
-
-const Caption = styled.span`
-  font-size: 14px;
+  font-size: 1.25rem;
   font-weight: 300;
-  color: ${({ theme }) => theme.darkGreyColor};
+  color: #ffffff;
+  position: absolute;
+  bottom: 2rem;
+  left: 2.5rem;
 `;
 
-const ProjectPC = ({ className }) => {
+const ProjectPC = ({ className, background, thumb, project }) => {
   return (
-    <Wrapper className={className}>
-      <Container>
-        <Link to="/">
-          <ThumbContainer src="http://placehold.it/720x480">
-            <Thumb>
-              <ThumbImg src="http://placehold.it/550x348" />
-            </Thumb>
-          </ThumbContainer>
-          <MetaContainer>
-            <Meta>Category / PROJECT</Meta>
-          </MetaContainer>
-          <TitleContainer>
-            <Title>Project</Title>
-            <Caption>Project Caption</Caption>
-          </TitleContainer>
-        </Link>
-      </Container>
-    </Wrapper>
+    <Container className={className}>
+      <Link to="/">
+        <ThumbContainer src={background} alt={project}>
+          <Thumb src={thumb} />
+          <Title>
+            {project}
+          </Title>
+        </ThumbContainer>
+      </Link>
+    </Container>
   );
 };
 

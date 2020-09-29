@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { Logo } from "../Components/Icons";
-import ProjectPC from "../Components/ProjectPC";
+import ProjectPC from "../Components/MainProjectPC";
 import SubTitle from "../Components/SubTitle";
 import Contact from "../Components/Contact";
+import BackgroundGradient1 from "../Assets/Background/background-gradient.png";
+import BackgroundGradient2 from "../Assets/Background/background-gradient-2.png";
+import BackgroundGradient3 from "../Assets/Background/background-gradient-3.png";
+import BackgroundGradient4 from "../Assets/Background/background-gradient-4.png";
 
 const Container = styled.div`
   width: 80%;
@@ -66,10 +70,30 @@ const Home = () => {
       </TitleContainer>
       <WorksSubTitle text="Works" url="/works" />
       <WorksContainer>
-        <Work />
-        <Work />
-        <Work />
-        <Work />
+        <Work
+          background={BackgroundGradient1}
+          thumb="http://placehold.it/550x348"
+          project="Project"
+          caption="Project Caption"
+        />
+        <Work
+          background={BackgroundGradient2}
+          thumb="http://placehold.it/550x348"
+          project="Project"
+          caption="Project Caption"
+        />
+        <Work
+          background={BackgroundGradient3}
+          thumb="http://placehold.it/550x348"
+          project="Project"
+          caption="Project Caption"
+        />
+        <Work
+          background={BackgroundGradient4}
+          thumb="http://placehold.it/550x348"
+          project="Project"
+          caption="Project Caption"
+        />
       </WorksContainer>
       <MoreSubTitle text="MORE" url="/works" />
       <Contact />
