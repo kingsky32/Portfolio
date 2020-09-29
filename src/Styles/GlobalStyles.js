@@ -16,15 +16,27 @@ export default createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
-  input:focus{
-    outline: none;
+  input, textarea {
+    border-radius: .3rem;
+    background-color: transparent;
+    padding: .8rem 1.5rem;
+    line-height: 1.8;
+    border: 1px solid rgba(24, 28, 33, .1);
+    color: inherit;
+    font-size: 1.43rem;
+    &::placeholder {
+      color: #BABBBC;
+    }
+    &:focus {
+      outline: none;
+    }
   }
   textarea {
-    font: inherit;
-    border: none;
+    font-family: inherit;
     overflow: auto;
     outline: none;
     box-shadow: none;
+    resize: none;
   }
   button {
     background: 0 0;
