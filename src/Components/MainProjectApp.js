@@ -105,7 +105,7 @@ const Caption = styled.span`
   color: ${({ theme }) => theme.darkGreyColor};
 `;
 
-const MainProjectPC = ({
+const MainProjectApp = ({
   id,
   className,
   background,
@@ -146,4 +146,4 @@ const MainProjectPC = ({
   );
 };
 
-export default MainProjectPC;
+export default MainProjectApp;

@@ -3,14 +3,11 @@ import styled from "styled-components";
 import MainProjectPC from "../Components/MainProjectPC";
 import SubTitle from "../Components/SubTitle";
 import Contact from "../Components/Contact";
-import BackgroundGradient1 from "../Assets/Background/background-gradient.png";
-import BackgroundGradient2 from "../Assets/Background/background-gradient-2.png";
-import BackgroundGradient3 from "../Assets/Background/background-gradient-3.png";
-import BackgroundGradient4 from "../Assets/Background/background-gradient-4.png";
 import { Power1, TweenLite } from "gsap";
 import LogoAnimation from "../Components/LogoAnimation";
 import ScrollTrigger from "react-scroll-trigger";
-import ThumbPrismagram from "../Assets/Thumb/thumb-prismagram.mov";
+import { mainWorks } from "../works";
+import MainProjectApp from "../Components/MainProjectApp";
 
 const Container = styled.div`
   width: 80%;
@@ -49,7 +46,12 @@ const WorksSubTitle = styled(SubTitle)`
   position: relative;
 `;
 
-const Work = styled(MainProjectPC)`
+const WorkPC = styled(MainProjectPC)`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const WorkApp = styled(MainProjectApp)`
   display: flex;
   justify-content: flex-end;
 `;
@@ -60,9 +62,11 @@ const WorksContainer = styled.div`
   margin-bottom: 20rem;
   > div {
     &:nth-child(2n) {
-      ${Work} {
+      ${WorkPC},
+      ${WorkApp} {
         justify-content: flex-start;
       }
+
     }
     &:not(:last-child) {
       margin-bottom: 20rem;
@@ -77,33 +81,50 @@ const MoreSubTitle = styled(SubTitle)`
 const Home = () => {
   const duration = 0.3;
   const [loading, setLoading] = useState(false);
+  
   useEffect(() => {
-    TweenLite.fromTo(
-      "#mt, #mc",
-      { lineHeight: 5 },
-      {
-        delay: 6.25,
-        duration,
-        lineHeight: 1,
-        ease: Power1
-      }
-    );
-    setTimeout(() => {
+    if(!sessionStorage.getItem("first-visit") || sessionStorage.getItem("first-visit") === null) {
+      TweenLite.fromTo(
+        "#mt, #mc",
+        { lineHeight: 5 },
+        {
+          delay: 6.25,
+          duration,
+          lineHeight: 1,
+          ease: Power1
+        }
+      );
+      setTimeout(() => {
+        setLoading(prev => !prev)
+        TweenLite.fromTo("#st1, #wk1", {
+          duration,
+          opacity: 0,
+          translateY: "5rem",
+          ease: Power1
+        }, {
+          duration,
+          opacity: 1,
+          translateY: "0",
+          ease: Power1
+        });
+      }, 6750)
+    } else {
       setLoading(prev => !prev)
-      TweenLite.from("#st1, #wk1", {
-        duration,
-        opacity: 0,
-        translateY: "5rem",
-        ease: Power1
-      });
-    }, 6750)
+    }
+    setTimeout(() => sessionStorage.setItem("first-visit", true), 50);
   }, []);
 
   const onEnterViewport = e => {
-    TweenLite.from(e, {
+    TweenLite.fromTo(e, {
       duration,
       opacity: 0,
-      translateY: "5rem"
+      translateY: "5rem",
+      ease: Power1
+    }, {
+      duration,
+      opacity: 1,
+      translateY: "0",
+      ease: Power1
     });
   };
 
@@ -112,47 +133,27 @@ const Home = () => {
       <TitleContainer>
         <LogoAnimation />
         <MetaTitle id="mt">Design + Front-end + Back-end</MetaTitle>
-        <MetaContent id="mc">‘Seung Ju’ is creative design and developer.</MetaContent>
+        <MetaContent id="mc">‘Seung Ju’ is creative designer and developer.</MetaContent>
       </TitleContainer>
       {loading && <>
         <WorksSubTitle id="st1" text="Works" url="/works" />
         <WorksContainer>
-          <div>
-            <Work
-              id="wk1"
-              background={BackgroundGradient1}
-              thumb={ThumbPrismagram}
-              project="Project"
-              caption="Project Caption"
-            />
-          </div>
-          <ScrollTrigger onEnter={() => onEnterViewport("#wk2")}>
-            <Work
-              id="wk2"
-              background={BackgroundGradient2}
-              thumb={ThumbPrismagram}
-              project="Project"
-              caption="Project Caption"
-            />
-          </ScrollTrigger>
-          <ScrollTrigger onEnter={() => onEnterViewport("#wk3")}>
-            <Work
-              id="wk3"
-              background={BackgroundGradient3}
-              thumb={ThumbPrismagram}
-              project="Project"
-              caption="Project Caption"
-            />
-          </ScrollTrigger>
-          <ScrollTrigger onEnter={() => onEnterViewport("#wk4")}>
-            <Work
-              id="wk4"
-              background={BackgroundGradient4}
-              thumb={ThumbPrismagram}
-              project="Project"
-              caption="Project Caption"
-            />
-          </ScrollTrigger>
+          {mainWorks && mainWorks.map((work, idx) =>
+          <ScrollTrigger key={idx} onEnter={() => onEnterViewport("#wk1")}>
+            {work.type === "web" ?
+              <WorkPC
+                id={`wk${idx + 1}`}
+                pid={work.id}
+                {...work}
+              />
+              : work.type === "app" &&
+              <WorkApp
+                id={`wk${idx + 1}`}
+                pid={work.id}
+                {...work} 
+              />
+            }
+          </ScrollTrigger>)}
         </WorksContainer>
         <ScrollTrigger onEnter={() => onEnterViewport("#st2")}>
           <MoreSubTitle id="st2" text="MORE" url="/works" />

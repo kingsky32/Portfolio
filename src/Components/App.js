@@ -33,13 +33,16 @@ export default () => {
   };
 
   useEffect(() => {
-    TweenLite.from("#hd, #mu, #cr", {
-      delay: 5.5,
-      duration,
-      opacity: 0,
-      translateY: "2rem",
-      ease: Power1
-    });
+    if (!sessionStorage.getItem("first-visit") || sessionStorage.getItem("first-visit") === null) {
+      TweenLite.from("#hd, #mu, #cr", {
+        delay: 5.5,
+        duration,
+        opacity: 0,
+        translateY: "2rem",
+        ease: Power1
+      });
+    }
+
     window
       .matchMedia("(prefers-color-scheme: dark)")
       .addEventListener(
