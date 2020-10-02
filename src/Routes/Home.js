@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import ProjectPC from "../Components/MainProjectPC";
+import MainProjectPC from "../Components/MainProjectPC";
 import SubTitle from "../Components/SubTitle";
 import Contact from "../Components/Contact";
 import BackgroundGradient1 from "../Assets/Background/background-gradient.png";
@@ -10,6 +10,7 @@ import BackgroundGradient4 from "../Assets/Background/background-gradient-4.png"
 import { Power1, TweenLite } from "gsap";
 import LogoAnimation from "../Components/LogoAnimation";
 import ScrollTrigger from "react-scroll-trigger";
+import ThumbPrismagram from "../Assets/Thumb/thumb-prismagram.mov";
 
 const Container = styled.div`
   width: 80%;
@@ -48,7 +49,7 @@ const WorksSubTitle = styled(SubTitle)`
   position: relative;
 `;
 
-const Work = styled(ProjectPC)`
+const Work = styled(MainProjectPC)`
   display: flex;
   justify-content: flex-end;
 `;
@@ -120,7 +121,7 @@ const Home = () => {
             <Work
               id="wk1"
               background={BackgroundGradient1}
-              thumb="http://placehold.it/550x348"
+              thumb={ThumbPrismagram}
               project="Project"
               caption="Project Caption"
             />
@@ -129,7 +130,7 @@ const Home = () => {
             <Work
               id="wk2"
               background={BackgroundGradient2}
-              thumb="http://placehold.it/550x348"
+              thumb={ThumbPrismagram}
               project="Project"
               caption="Project Caption"
             />
@@ -138,7 +139,7 @@ const Home = () => {
             <Work
               id="wk3"
               background={BackgroundGradient3}
-              thumb="http://placehold.it/550x348"
+              thumb={ThumbPrismagram}
               project="Project"
               caption="Project Caption"
             />
@@ -147,7 +148,7 @@ const Home = () => {
             <Work
               id="wk4"
               background={BackgroundGradient4}
-              thumb="http://placehold.it/550x348"
+              thumb={ThumbPrismagram}
               project="Project"
               caption="Project Caption"
             />

@@ -48,7 +48,7 @@ const Thumb = styled.div`
   margin: auto 0;
 `;
 
-const ThumbImg = styled.img`
+const ThumbVideo = styled.video`
   width: 100%;
   max-width: 100rem;
   border-radius: 10px;
@@ -105,14 +105,26 @@ const Caption = styled.span`
   color: ${({ theme }) => theme.darkGreyColor};
 `;
 
-const MainProjectPC = ({ id, className, background, thumb, project, caption, category, pid }) => {
+const MainProjectPC = ({
+  id,
+  className,
+  background,
+  thumb,
+  poster,
+  project,
+  caption,
+  category,
+  pid
+}) => {
   return (
     <Wrapper id={id} className={className}>
       <Container>
         <Link to={`/works/${pid}`}>
           <ThumbContainer src={background}>
-            <Thumb>
-              <ThumbImg src={thumb} />
+            <Thumb autoPlay loop muted poster={poster}>
+              <ThumbVideo autoPlay loop muted poster={thumb}>
+                <source src={thumb} />
+              </ThumbVideo>
             </Thumb>
           </ThumbContainer>
           <MetaContainer>
