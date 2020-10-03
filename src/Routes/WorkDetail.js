@@ -187,29 +187,13 @@ const WorkDetail = ({ match: { params: { id } } }) => {
   const tools = tool => {
     switch (tool) {
       case "React":
-        return (
-          <Tool>
-            <ReactIcon />
-          </Tool>
-        );
+        return <ReactIcon />;
       case "GraphQL":
-        return (
-          <Tool>
-            <Graphql />
-          </Tool>
-        );
+        return <Graphql />;
       case "Prisma":
-        return (
-          <Tool>
-            <PrismaIcon />
-          </Tool>
-        );
+        return <PrismaIcon />;
       case "Firebase":
-        return (
-          <Tool>
-            <FirebaseIcon />
-          </Tool>
-        );
+        return <FirebaseIcon />;
       default:
         return null;
     }
@@ -241,7 +225,11 @@ const WorkDetail = ({ match: { params: { id } } }) => {
             )}
           </MetaContainer>
           <Tools>
-            {work.tools.map(tool => tools(tool))}
+            {work.tools.map((tool, idx) =>
+              <Tool key={idx}>
+                {tools(tool)}
+              </Tool>
+            )}
           </Tools>
           <LinkContainer>
             {work.page &&
