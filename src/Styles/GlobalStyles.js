@@ -43,4 +43,26 @@ export default createGlobalStyle`
     border: 0;
     cursor: pointer;
   }
+  .fade-enter,
+  .fade-exit {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    ${({ theme }) => theme.transition};
+  }
+  .fade-enter {
+    transition-duration: 0;
+    transform: translateY(5rem);
+    opacity: 0;
+  }
+  .fade-enter-done {
+    ${({ theme }) => theme.transition};
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-exit {
+    transform: translateY(5rem);
+    opacity: 0;
+  }
 `;

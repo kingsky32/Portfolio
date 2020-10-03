@@ -63,7 +63,7 @@ const Contact = () => {
     <Container>
       <Title>Contact</Title>
       <SubTitle>
-        Thank you for visiting Seungjoo's website.<br />
+        Thank you for visiting Seung ju's website.<br />
         Please feel free to contact me if you have any questions
       </SubTitle>
       <FormContainer onSubmit={onSubmit}>

@@ -139,17 +139,15 @@ const Home = () => {
         <WorksSubTitle id="st1" text="Works" url="/works" />
         <WorksContainer>
           {mainWorks && mainWorks.map((work, idx) =>
-          <ScrollTrigger key={idx} onEnter={() => onEnterViewport("#wk1")}>
+          <ScrollTrigger key={idx} onEnter={() => onEnterViewport(`#wk${idx + 1}`)}>
             {work.type === "web" ?
               <WorkPC
                 id={`wk${idx + 1}`}
-                pid={work.id}
                 {...work}
               />
               : work.type === "app" &&
               <WorkApp
                 id={`wk${idx + 1}`}
-                pid={work.id}
                 {...work} 
               />
             }

@@ -6,7 +6,7 @@ import ThumbPrismagram from "./Assets/Thumb/thumb-prismagram.mov";
 
 export const mainWorks = [
   {
-    id: "prismagram",
+    pid: "prismagram",
     type: "web",
     project: "Prismagram",
     background: BackgroundGradient1,
@@ -19,7 +19,7 @@ export const mainWorks = [
     github: "https://github.com/kingsky32/prismagram"
   },
   {
-    id: "facebook",
+    pid: "facebook",
     type: "web",
     project: "Facebook",
     background: BackgroundGradient2,
@@ -32,7 +32,7 @@ export const mainWorks = [
     github: "https://github.com/kingsky32/facebook"
   },
   {
-    id: "nwitter",
+    pid: "nwitter",
     type: "web",
     project: "Nwitter",
     background: BackgroundGradient3,
@@ -45,7 +45,7 @@ export const mainWorks = [
     github: "https://github.com/kingsky32/nwitter"
   },
   {
-    id: "weather",
+    pid: "weather",
     type: "app",
     project: "Weather",
     background: BackgroundGradient4,

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import { Favicon, Moon } from "./Icons";
 
@@ -53,7 +53,7 @@ const DarkButton = styled.button`
   }
 `;
 
-const Header = ({ id, onToggleDarkmode }) => {
+const Header = ({ id, onToggleDarkmode, history }) => {
   const [scrollValue, setScrollValue] = useState(-100);
 
   const getScrollValue = () => {
@@ -69,6 +69,8 @@ const Header = ({ id, onToggleDarkmode }) => {
     getScrollValue();
     window.addEventListener("scroll", getScrollValue);
   }, []);
+
+  useEffect(() => history.listen(getScrollValue), [history]);
 
   return (
     <Container id={id}>
@@ -87,4 +89,4 @@ const Header = ({ id, onToggleDarkmode }) => {
   );
 };
 
-export default Header;
+export default withRouter(Header);

@@ -3,16 +3,20 @@ import { TweenLite, Power1 } from "gsap/gsap-core";
 
 export default () => {
   useEffect(() => {
-    TweenLite.fromTo(
-      "#mk",
-      { strokeDashoffset: 3000 },
-      {
-        delay: 2,
-        duration: 7,
-        strokeDashoffset: 0,
-        ease: Power1
-      }
-    );
+    if (!sessionStorage.getItem("first-visit") || sessionStorage.getItem("first-visit") === null) {
+      TweenLite.fromTo(
+        "#mk",
+        { strokeDashoffset: 3000 },
+        {
+          delay: 2,
+          duration: 7,
+          strokeDashoffset: 0,
+          ease: Power1
+        }
+      );
+    } else {
+      document.getElementById("mk").style.strokeDashoffset = 0;
+    }
   }, []);
   return (
     <svg version="1.1" viewBox="0 0 504.3 134.2" width="200px">
