@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Facebook, Favicon, Github, GooglePlus, Instagram } from "./Icons";
+import { Prismabook, Favicon, Github, GooglePlus, Instagram } from "./Icons";
 
 const Container = styled.div`
   width: 100vw;
@@ -98,10 +98,10 @@ const Menu = () => {
         </Social>
         <Social>
           <SocialLink
-            href="https://www.facebook.com/profile.php?id=100004252961772"
+            href="https://www.prismabook.com/profile.php?id=100004252961772"
             target="_blank"
           >
-            <Facebook />
+            <Prismabook />
           </SocialLink>
         </Social>
         <Social>

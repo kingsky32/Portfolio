@@ -3,7 +3,7 @@ import BackgroundGradient2 from "./Assets/Background/background-gradient-2.png";
 import BackgroundGradient3 from "./Assets/Background/background-gradient-3.png";
 import BackgroundGradient4 from "./Assets/Background/background-gradient-4.png";
 import ThumbPrismagram from "./Assets/Thumb/thumb-prismagram.mov";
-import ThumbFacebook from "./Assets/Thumb/thumb-facebook.mov";
+import ThumbPrismabook from "./Assets/Thumb/thumb-prismabook.mov";
 import ThumbNwitter from "./Assets/Thumb/thumb-nwitter.mov";
 import ThumbWeather from "./Assets/Thumb/thumb-weather.mov";
 
@@ -24,17 +24,17 @@ export const mainWorks = [
   },
   {
     id: 1,
-    pid: "facebook",
+    pid: "prismabook",
     type: "web",
-    project: "Facebook",
+    project: "Prismabook",
     background: BackgroundGradient2,
-    thumb: ThumbFacebook,
+    thumb: ThumbPrismabook,
     category: "Web / Develop",
-    caption: "Facebook clone with Express + Prisma + React",
+    caption: "Prismabook clone with Express + Prisma + React",
     meta: ["September 2020 (3 weeks)", "Develop"],
     tools: ["React", "GraphQL", "Prisma"],
-    page: "http://facebook.kingsky32.co.kr/",
-    github: "https://github.com/kingsky32/facebook-frontend"
+    page: "http://prismabook.kingsky32.co.kr/",
+    github: "https://github.com/kingsky32/prismabook-frontend"
   },
   {
     id: 2,
@@ -82,17 +82,17 @@ export const works = [
   },
   {
     id: 1,
-    pid: "facebook",
+    pid: "prismabook",
     type: "web",
-    project: "Facebook",
+    project: "Prismabook",
     background: BackgroundGradient2,
-    thumb: ThumbFacebook,
+    thumb: ThumbPrismabook,
     category: "Web / Develop",
-    caption: "Facebook clone with Express + Prisma + React",
+    caption: "Prismabook clone with Express + Prisma + React",
     meta: ["September 2020 (3 weeks)", "Develop"],
     tools: ["React", "GraphQL", "Prisma"],
-    page: "http://facebook.kingsky32.co.kr/",
-    github: "https://github.com/kingsky32/facebook-frontend"
+    page: "http://prismabook.kingsky32.co.kr/",
+    github: "https://github.com/kingsky32/prismabook-frontend"
   },
   {
     id: 2,

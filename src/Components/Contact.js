@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Call, Facebook, Github, Instagram, Mail } from "./Icons";
+import { Call, Prismabook, Github, Instagram, Mail } from "./Icons";
 import SubTitle from "./SubTitle";
 
 const Container = styled.div`
@@ -52,7 +52,7 @@ export default ({ id }) => {
         <Contact icon={<Instagram size="1.6rem" />} text="@kingsky32" />
         <Contact icon={<Mail size="1.6rem" />} text="kingsky32@gmail.com" />
         <Contact icon={<Github size="1.6rem" />} text="@kingsky32" />
-        <Contact icon={<Facebook size="1.6rem" />} text="@kingsky32" />
+        <Contact icon={<Prismabook size="1.6rem" />} text="@kingsky32" />
       </Contacts>
     </Container>
   );
