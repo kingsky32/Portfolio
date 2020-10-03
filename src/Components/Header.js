@@ -39,6 +39,7 @@ const ScrollLine = styled.span`
   height: 100%;
   position: absolute;
   top: ${({ scrollValue }) => scrollValue}%;
+  ${({ theme }) => theme.transition};
   background-color: ${({ theme }) => theme.blackColor};
 `;
 
@@ -70,7 +71,13 @@ const Header = ({ id, onToggleDarkmode, history }) => {
     window.addEventListener("scroll", getScrollValue);
   }, []);
 
-  useEffect(() => history.listen(getScrollValue), [history]);
+  useEffect(
+    () =>
+      history.listen(() => {
+        setTimeout(getScrollValue, 600);
+      }),
+    [history]
+  );
 
   return (
     <Container id={id}>
