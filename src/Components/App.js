@@ -11,13 +11,14 @@ import Copyright from "./Copyright";
 import Menu from "./Menu";
 import { TweenLite } from "gsap/gsap-core";
 import { Power1 } from "gsap/gsap-core";
+import DarkTheme from "../Styles/DarkTheme";
 
 const RootWrapper = styled.div``;
 
 const Wrapper = styled.div`padding: 15rem 0;`;
 
 export default () => {
-  const [darkmode, setDarkMode] = useState(
+  const [darkMode, setDarkMode] = useState(
     window.matchMedia("(prefers-color-scheme: dark)").matches
   );
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -50,9 +51,8 @@ export default () => {
         event => (event.matches ? setDarkMode(true) : setDarkMode(false))
       );
   }, []);
-
   return (
-    <ThemeProvider theme={Theme}>
+    <ThemeProvider theme={darkMode ? DarkTheme : Theme}>
       <Helmet>
         <title>Portfolio</title>
       </Helmet>
@@ -64,7 +64,7 @@ export default () => {
             <MenuButton id="mu" isOpenMenu={isOpenMenu} onToggleMenu={onToggleMenu} />
             <Copyright id="cr" />
             {isOpenMenu && <Menu />}
-            <Routes onCloseMenu={onCloseMenu} darkmode={darkmode} />
+            <Routes onCloseMenu={onCloseMenu} darkMode={darkMode} />
           </Wrapper>
         </Router>
       </RootWrapper>

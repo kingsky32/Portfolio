@@ -135,13 +135,13 @@ const Tool = styled.li`
   border-radius: 1rem;
   padding: 1rem;
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: ${({ theme }) => theme.blackColor}05;
   ${({ theme }) => theme.transition};
   &:not(:last-child) {
     margin-right: 1rem;
   }
   &:hover {
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: ${({ theme }) => theme.blackColor}15;
   }
 `;
 
