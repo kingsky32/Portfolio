@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { Favicon, Moon } from "./Icons";
 
@@ -54,8 +54,9 @@ const DarkButton = styled.button`
   }
 `;
 
-const Header = ({ id, onToggleDarkmode, history }) => {
+const Header = ({ id, onToggleDarkmode }) => {
   const [scrollValue, setScrollValue] = useState(-100);
+  const history = useHistory();
 
   const getScrollValue = () => {
     const scrollPosition = document.documentElement.scrollTop;
@@ -96,4 +97,4 @@ const Header = ({ id, onToggleDarkmode, history }) => {
   );
 };
 
-export default withRouter(Header);
+export default Header;

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Switch, useHistory, withRouter } from "react-router-dom";
+import { Route, Switch, useHistory, useLocation } from "react-router-dom";
 import About from "../Routes/About";
 import Contact from "../Routes/Contact";
 import Home from "../Routes/Home";
@@ -11,8 +11,9 @@ import { ScrollToPlugin } from "gsap/all";
 
 gsap.registerPlugin(ScrollToPlugin);
 
-const Routes = ({ onCloseMenu, location }) => {
+const Routes = ({ onCloseMenu }) => {
   const history = useHistory();
+  const location = useLocation();
   useEffect(
     () => {
       history.listen(() => {
@@ -44,4 +45,4 @@ const Routes = ({ onCloseMenu, location }) => {
   );
 };
 
-export default withRouter(Routes);
+export default Routes;

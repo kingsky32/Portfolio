@@ -255,9 +255,10 @@ const WorkDetail = ({ match: { params: { id } } }) => {
           </LinkContainer>
         </InfoContainer>
       </ProjectContainer>
-      {nextWork && nextWork.type === "web"
-        ? <NextProject {...nextWork} />
-        : <NextProjectApp {...nextWork} />}
+      {nextWork &&
+        (nextWork.type === "web"
+          ? <NextProject {...nextWork} />
+          : <NextProjectApp {...nextWork} />)}
     </Container>
   );
 };
