@@ -5,6 +5,7 @@ import SubTitle from "../Components/SubTitle";
 import MainProjectPC from "../Components/MainProjectPC";
 import { works } from "../works";
 import MockupApp from "../Assets/mockup/mobile-mockup.png";
+import MainProjectApp from "../Components/MainProjectApp";
 
 const Container = styled.div``;
 
@@ -149,6 +150,11 @@ const NextProject = styled(MainProjectPC)`
   justify-content: center;
 `;
 
+const NextProjectApp = styled(MainProjectApp)`
+  display: flex;
+  justify-content: center;
+`;
+
 const LinkContainer = styled.div``;
 
 const Link = styled.a`
@@ -249,7 +255,9 @@ const WorkDetail = ({ match: { params: { id } } }) => {
           </LinkContainer>
         </InfoContainer>
       </ProjectContainer>
-      {nextWork && <NextProject {...nextWork} />}
+      {nextWork && nextWork.type === "web"
+        ? <NextProject {...nextWork} />
+        : <NextProjectApp {...nextWork} />}
     </Container>
   );
 };
