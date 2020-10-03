@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Graphql, ReactIcon } from "../Components/Icons";
+import { FirebaseIcon, Graphql, PrismaIcon, ReactIcon } from "../Components/Icons";
 import SubTitle from "../Components/SubTitle";
-import BackgroundGradient from "../Assets/Background/background-gradient.png";
 import MainProjectPC from "../Components/MainProjectPC";
+import { works } from "../works";
+import MockupApp from "../Assets/mockup/mobile-mockup.png";
 
 const Container = styled.div``;
 
@@ -40,7 +41,7 @@ const Thumb = styled.div`
   margin: auto 0;
 `;
 
-const ThumbImg = styled.img`
+const ThumbVideo = styled.video`
   width: 100%;
   max-width: 100rem;
   border-radius: 10px;
@@ -51,6 +52,50 @@ const ThumbImg = styled.img`
   margin: auto 0;
   object-fit: cover;
   ${({ theme }) => theme.transition};
+`;
+
+const ThumbApp = styled.div`
+  width: 80%;
+  max-width: 30rem;
+  height: 65rem;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    opacity: .2;
+    background-image: url(${MockupApp});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+`;
+
+const ThumbAppVideo = styled.video`
+  width: 96%;
+  height: 90%;
+  border-radius: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  object-fit: cover;
+  ${({ theme }) => theme.transition};
+  z-index: 5;
 `;
 
 const InfoContainer = styled.div`padding: 0 8%;`;
@@ -130,42 +175,81 @@ const Link = styled.a`
   }
 `;
 
-const WorkDetail = () => {
+const WorkDetail = ({ match: { params: { id } } }) => {
+  const [work] = works.filter(e => e.pid === id);
+  const [nextWork] = works.filter(e => e.id === work.id + 1);
+  const tools = tool => {
+    switch (tool) {
+      case "React":
+        return (
+          <Tool>
+            <ReactIcon />
+          </Tool>
+        );
+      case "GraphQL":
+        return (
+          <Tool>
+            <Graphql />
+          </Tool>
+        );
+      case "Prisma":
+        return (
+          <Tool>
+            <PrismaIcon />
+          </Tool>
+        );
+      case "Firebase":
+        return (
+          <Tool>
+            <FirebaseIcon />
+          </Tool>
+        );
+      default:
+        return null;
+    }
+  };
   return (
     <Container>
-      <ProjectSubTitle text="Project" />
+      <ProjectSubTitle text={work.project} />
       <ProjectContainer>
-        <ThumbContainer src={BackgroundGradient}>
-          <Thumb>
-            <ThumbImg src="http://placehold.it/550x348" />
-          </Thumb>
+        <ThumbContainer src={work.background}>
+          {work.type === "web"
+            ? <Thumb>
+                <ThumbVideo autoPlay loop muted poster={work.thumb}>
+                  <source src={work.thumb} />
+                </ThumbVideo>
+              </Thumb>
+            : <ThumbApp>
+                <ThumbAppVideo autoPlay loop muted poster={work.thumb}>
+                  <source src={work.thumb} />
+                </ThumbAppVideo>
+              </ThumbApp>}
         </ThumbContainer>
         <InfoContainer>
           <InfoTitle>PROJECT</InfoTitle>
           <MetaContainer>
-            <Meta>November 2020 (2 weeks)</Meta>
-            <Meta>Design & Develop</Meta>
+            {work.meta.map((meta, idx) =>
+              <Meta key={idx}>
+                {meta}
+              </Meta>
+            )}
           </MetaContainer>
           <Tools>
-            <Tool>
-              <ReactIcon />
-            </Tool>
-            <Tool>
-              <Graphql />
-            </Tool>
+            {work.tools.map(tool => tools(tool))}
           </Tools>
           <LinkContainer>
-            <Link href="">Visit Page</Link>
-            <Link href="">Visit Github</Link>
+            {work.page &&
+              <Link href={work.page} target="_blank">
+                Visit Page
+              </Link>}
+            {work.github &&
+              <Link href={work.github} target="_blank">
+                Visit Github
+              </Link>}
           </LinkContainer>
         </InfoContainer>
       </ProjectContainer>
-      <NextProject
-        background={BackgroundGradient}
-        thumb="http://placehold.it/550x348"
-        project="Project"
-        caption="Project Caption"
-      />
+      {nextWork && <NextProject {...nextWork} />}
     </Container>
   );
 };

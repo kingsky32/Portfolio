@@ -3,9 +3,13 @@ import BackgroundGradient2 from "./Assets/Background/background-gradient-2.png";
 import BackgroundGradient3 from "./Assets/Background/background-gradient-3.png";
 import BackgroundGradient4 from "./Assets/Background/background-gradient-4.png";
 import ThumbPrismagram from "./Assets/Thumb/thumb-prismagram.mov";
+import ThumbFacebook from "./Assets/Thumb/thumb-facebook.mov";
+import ThumbNwitter from "./Assets/Thumb/thumb-nwitter.mov";
+import ThumbWeather from "./Assets/Thumb/thumb-weather.mov";
 
 export const mainWorks = [
   {
+    id: 0,
     pid: "prismagram",
     type: "web",
     project: "Prismagram",
@@ -14,46 +18,107 @@ export const mainWorks = [
     category: "Web / Develop",
     caption: "Instaclone (GraphQL + Hooks)",
     meta: ["July 2020 (5 weeks)", "Develop"],
-    tool: ["React", "GraphQL", "Express", "Prisma"],
+    tools: ["React", "GraphQL", "Prisma"],
     page: "http://prismagram.kingsky32.co.kr/",
-    github: "https://github.com/kingsky32/prismagram"
+    github: "https://github.com/kingsky32/prismagram-frontend"
   },
   {
+    id: 1,
     pid: "facebook",
     type: "web",
     project: "Facebook",
     background: BackgroundGradient2,
-    thumb: ThumbPrismagram,
+    thumb: ThumbFacebook,
     category: "Web / Develop",
     caption: "Facebook clone with Express + Prisma + React",
     meta: ["September 2020 (3 weeks)", "Develop"],
-    tool: ["React", "GraphQL", "Express", "Prisma"],
+    tools: ["React", "GraphQL", "Prisma"],
     page: "http://facebook.kingsky32.co.kr/",
-    github: "https://github.com/kingsky32/facebook"
+    github: "https://github.com/kingsky32/facebook-frontend"
   },
   {
+    id: 2,
     pid: "nwitter",
     type: "web",
     project: "Nwitter",
     background: BackgroundGradient3,
-    thumb: ThumbPrismagram,
+    thumb: ThumbNwitter,
     category: "Web / Develop",
     caption: "Cloning Twitter with React and Firebase",
     meta: ["September 2020 (3 weeks)", "Develop"],
-    tool: ["React", "Firebase"],
+    tools: ["React", "Firebase"],
     page: "http://nwitter.kingsky32.co.kr/",
     github: "https://github.com/kingsky32/nwitter"
   },
   {
+    id: 3,
     pid: "weather",
     type: "app",
     project: "Weather",
     background: BackgroundGradient4,
-    thumb: ThumbPrismagram,
+    thumb: ThumbWeather,
     category: "App / Develop",
     caption: "React Native by Building a Apple Weather App",
     meta: ["September 2020 (3 weeks)", "Develop"],
-    tool: ["React-Native"],
+    tools: ["React-Native"],
+    github: "https://github.com/kingsky32/weather-app"
+  }
+];
+
+export const works = [
+  {
+    id: 0,
+    pid: "prismagram",
+    type: "web",
+    project: "Prismagram",
+    background: BackgroundGradient1,
+    thumb: ThumbPrismagram,
+    category: "Web / Develop",
+    caption: "Instaclone (GraphQL + Hooks)",
+    meta: ["July 2020 (5 weeks)", "Develop"],
+    tools: ["React", "GraphQL", "Prisma"],
+    page: "http://prismagram.kingsky32.co.kr/",
+    github: "https://github.com/kingsky32/prismagram-frontend"
+  },
+  {
+    id: 1,
+    pid: "facebook",
+    type: "web",
+    project: "Facebook",
+    background: BackgroundGradient2,
+    thumb: ThumbFacebook,
+    category: "Web / Develop",
+    caption: "Facebook clone with Express + Prisma + React",
+    meta: ["September 2020 (3 weeks)", "Develop"],
+    tools: ["React", "GraphQL", "Prisma"],
+    page: "http://facebook.kingsky32.co.kr/",
+    github: "https://github.com/kingsky32/facebook-frontend"
+  },
+  {
+    id: 2,
+    pid: "nwitter",
+    type: "web",
+    project: "Nwitter",
+    background: BackgroundGradient3,
+    thumb: ThumbNwitter,
+    category: "Web / Develop",
+    caption: "Cloning Twitter with React and Firebase",
+    meta: ["September 2020 (3 weeks)", "Develop"],
+    tools: ["React", "Firebase"],
+    page: "http://nwitter.kingsky32.co.kr/",
+    github: "https://github.com/kingsky32/nwitter"
+  },
+  {
+    id: 3,
+    pid: "weather",
+    type: "app",
+    project: "Weather",
+    background: BackgroundGradient4,
+    thumb: ThumbWeather,
+    category: "App / Develop",
+    caption: "React Native by Building a Apple Weather App",
+    meta: ["September 2020 (3 weeks)", "Develop"],
+    tools: ["React-Native"],
     github: "https://github.com/kingsky32/weather-app"
   }
 ];

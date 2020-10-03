@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import MockupApp from "../Assets/mockup/mobile-mockup.png";
 
 const Wrapper = styled.div`overflow: hidden;`;
 
@@ -36,29 +37,46 @@ const ThumbContainer = styled.div`
 `;
 
 const Thumb = styled.div`
-  width: 100%;
-  max-width: 105rem;
-  height: 60rem;
+  width: 80%;
+  max-width: 30rem;
+  height: 65rem;
   border-radius: 10px;
   position: absolute;
-  background: #ffffff20;
   top: 0;
-  right: 1rem;
+  right: 2rem;
   bottom: 3rem;
   margin: auto 0;
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    opacity: .2;
+    background-image: url(${MockupApp});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 `;
 
 const ThumbVideo = styled.video`
-  width: 100%;
-  max-width: 100rem;
-  border-radius: 10px;
+  width: 96%;
+  height: 90%;
+  border-radius: 2rem;
   position: absolute;
-  top: 3rem;
-  right: 1rem;
+  top: 0;
+  right: 0;
   bottom: 0;
-  margin: auto 0;
+  left: 0;
+  margin: auto;
   object-fit: cover;
   ${({ theme }) => theme.transition};
+  z-index: 5;
 `;
 
 const MetaContainer = styled.div`
@@ -105,23 +123,13 @@ const Caption = styled.span`
   color: ${({ theme }) => theme.darkGreyColor};
 `;
 
-const MainProjectApp = ({
-  id,
-  className,
-  background,
-  thumb,
-  poster,
-  project,
-  caption,
-  category,
-  pid
-}) => {
+const MainProjectApp = ({ id, className, background, thumb, project, caption, category, pid }) => {
   return (
     <Wrapper id={id} className={className}>
       <Container>
         <Link to={`/works/${pid}`}>
           <ThumbContainer src={background}>
-            <Thumb autoPlay loop muted poster={poster}>
+            <Thumb>
               <ThumbVideo autoPlay loop muted poster={thumb}>
                 <source src={thumb} />
               </ThumbVideo>

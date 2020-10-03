@@ -109,7 +109,7 @@ const Home = () => {
         });
       }, 6750)
     } else {
-      setLoading(prev => !prev)
+      setLoading(prev => !prev);
     }
     setTimeout(() => sessionStorage.setItem("first-visit", true), 50);
   }, []);
@@ -142,13 +142,13 @@ const Home = () => {
           <ScrollTrigger key={idx} onEnter={() => onEnterViewport(`#wk${idx + 1}`)}>
             {work.type === "web" ?
               <WorkPC
-                id={`wk${idx + 1}`}
                 {...work}
+                id={`wk${idx + 1}`}
               />
               : work.type === "app" &&
               <WorkApp
-                id={`wk${idx + 1}`}
                 {...work} 
+                id={`wk${idx + 1}`}
               />
             }
           </ScrollTrigger>)}
