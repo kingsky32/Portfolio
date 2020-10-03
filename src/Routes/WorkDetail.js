@@ -188,6 +188,8 @@ const WorkDetail = ({ match: { params: { id } } }) => {
     switch (tool) {
       case "React":
         return <ReactIcon />;
+      case "React-Native":
+        return <ReactIcon />;
       case "GraphQL":
         return <Graphql />;
       case "Prisma":
