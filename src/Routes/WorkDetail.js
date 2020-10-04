@@ -6,6 +6,7 @@ import MainProjectPC from "../Components/MainProjectPC";
 import { works } from "../works";
 import MockupApp from "../Assets/mockup/mobile-mockup.png";
 import MainProjectApp from "../Components/MainProjectApp";
+import { Helmet } from "react-helmet";
 
 const Container = styled.div``;
 
@@ -202,6 +203,11 @@ const WorkDetail = ({ match: { params: { id } } }) => {
   };
   return (
     <Container>
+      <Helmet>
+        <title>
+          Seung Ju | {work.project}
+        </title>
+      </Helmet>
       <ProjectSubTitle text={work.project} />
       <ProjectContainer>
         <ThumbContainer src={work.background}>

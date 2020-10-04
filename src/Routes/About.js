@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import ProfileImg from "../Assets/profile-img.jpg";
 
@@ -58,6 +59,9 @@ const Content = styled.p`
 const About = () => {
   return (
     <Container>
+      <Helmet>
+        <title>Seung Ju | About</title>
+      </Helmet>
       <Title>About</Title>
       <ProfileContainer>
         <ProfilePicture>

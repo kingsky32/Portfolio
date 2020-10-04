@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import Button from "../Components/Button";
 import useInput from "../Hooks/useInput";
@@ -61,6 +62,9 @@ const Contact = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>Seung Ju | Contact</title>
+      </Helmet>
       <Title>Contact</Title>
       <SubTitle>
         Thank you for visiting Seung ju's website.<br />

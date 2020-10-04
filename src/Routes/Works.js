@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import MainProjectApp from "../Components/MainProjectApp";
 import MainProjectPC from "../Components/MainProjectPC";
@@ -40,6 +41,9 @@ const MainWorkApp = styled(MainProjectApp)`
 const Works = () => {
   return (
     <Container>
+      <Helmet>
+        <title>Seung Ju | Works</title>
+      </Helmet>
       <MainWorksContainer>
         {mainWorks &&
           mainWorks.map((work, idx) => {

@@ -54,7 +54,7 @@ export default () => {
   return (
     <ThemeProvider theme={darkMode ? DarkTheme : Theme}>
       <Helmet>
-        <title>Portfolio</title>
+        <title>Seung Ju | Portfolio</title>
       </Helmet>
       <RootWrapper>
         <GlobalStyles />
