@@ -8,6 +8,9 @@ const Container = styled.span`
   top: 25rem;
   right: -7rem;
   z-index: 50;
+  @media screen and (max-width: 1024px) {
+    right: -9rem;
+  }
 `;
 
 const Copyright = ({ id }) => {

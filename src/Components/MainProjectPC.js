@@ -23,6 +23,12 @@ const Container = styled.div`
       transform: scale(.95);
     }
   }
+  @media screen and (max-width: 1920px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    height: 60rem;
+  }
 `;
 
 const ThumbContainer = styled.div`
@@ -46,6 +52,25 @@ const Thumb = styled.div`
   right: 1rem;
   bottom: 3rem;
   margin: auto 0;
+  @media screen and (max-width: 1440px) {
+    width: 95%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+  @media screen and (max-width: 768px) {
+    height: 45rem;
+  }
+  @media screen and (max-width: 640px) {
+    height: 35rem;
+  }
+  @media screen and (max-width: 540px) {
+    height: 30rem;
+  }
+  @media screen and (max-width: 425px) {
+    height: 25rem;
+  }
 `;
 
 const ThumbVideo = styled.video`
@@ -59,6 +84,13 @@ const ThumbVideo = styled.video`
   margin: auto 0;
   object-fit: cover;
   ${({ theme }) => theme.transition};
+  @media screen and (max-width: 1440px) {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
 `;
 
 const MetaContainer = styled.div`
@@ -100,7 +132,7 @@ const Title = styled.span`
 `;
 
 const Caption = styled.span`
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 300;
   color: ${({ theme }) => theme.darkGreyColor};
 `;

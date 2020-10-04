@@ -12,6 +12,9 @@ import MainProjectApp from "../Components/MainProjectApp";
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;
+  @media screen and (max-width: 1024px) {
+    width: 90%;
+  }
 `;
 
 const TitleContainer = styled.div`
@@ -21,6 +24,9 @@ const TitleContainer = styled.div`
   margin: 0 10% 15rem;
   svg {
     width: 20rem;
+  }
+  @media screen and (max-width: 1024px) {
+    padding-top: 25vh;
   }
 `;
 

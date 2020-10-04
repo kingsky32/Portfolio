@@ -28,6 +28,9 @@ const Container = styled.div`
   right: 5rem;
   position: fixed;
   z-index: 50;
+  @media screen and (max-width: 1024px) {
+    right: 2rem;
+  }
 `;
 
 const MenuButton = ({ id, isOpenMenu, onToggleMenu }) => {

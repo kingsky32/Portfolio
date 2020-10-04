@@ -14,6 +14,12 @@ const Container = styled.header`
   top: 0;
   left: 5rem;
   z-index: 50;
+  @media screen and (max-width: 1024px) {
+    left: 2rem;
+  }
+  @media screen and (max-width: 768px) {
+    left: 1rem;
+  }
 `;
 
 const LogoContainer = styled.h1`
@@ -31,6 +37,9 @@ const ScrollLineContainer = styled.div`
   position: relative;
   background-color: ${({ theme }) => theme.blackColor}15;
   margin-bottom: 3rem;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const ScrollLine = styled.span`
@@ -51,6 +60,9 @@ const DarkButton = styled.button`
   background-color: ${({ theme }) => theme.blackColor};
   svg {
     fill: ${({ theme }) => theme.whiteColor};
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `;
 

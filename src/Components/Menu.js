@@ -16,9 +16,16 @@ const Container = styled.div`
   justify-content: space-between;
   padding: 12.5rem 24rem;
   z-index: 30;
+  @media screen and (max-width: 768px) {
+    padding: 12.5rem 0;
+    align-items: center;
+  }
 `;
 
-const GlobalNavigationBar = styled.ul``;
+const GlobalNavigationBar = styled.ul`
+  position: relative;
+  z-index: 10;
+`;
 
 const Navigation = styled.li`
   font-size: 8rem;
@@ -54,7 +61,11 @@ const Navigation = styled.li`
   }
 `;
 
-const SocialContainer = styled.ul`display: flex;`;
+const SocialContainer = styled.ul`
+  display: flex;
+  position: relative;
+  z-index: 10;
+`;
 
 const Social = styled.li`
   &:not(:last-child) {
@@ -71,6 +82,17 @@ const Shadow = styled.div`
   position: absolute;
   bottom: 20%;
   right: 5%;
+  @media screen and (max-width: 768px) {
+    width: 40rem;
+    height: 40rem;
+  }
+  @media screen and (max-width: 425px) {
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 95vw;
+    height: 95vw;
+  }
 `;
 
 const Menu = () => {

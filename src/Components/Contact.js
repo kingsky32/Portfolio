@@ -4,7 +4,8 @@ import { Call, Prismabook, Github, Instagram, Mail } from "./Icons";
 import SubTitle from "./SubTitle";
 
 const Container = styled.div`
-  width: 60rem;
+  width: 100%;
+  max-width: 60rem;
   margin: 0 auto;
 `;
 

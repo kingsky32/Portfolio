@@ -24,6 +24,12 @@ const Container = styled.div`
       transform: scale(.95);
     }
   }
+  @media screen and (max-width: 1920px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    height: 60rem;
+  }
 `;
 
 const ThumbContainer = styled.div`
@@ -61,6 +67,16 @@ const Thumb = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+  }
+  @media screen and (max-width: 1440px) {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+  @media screen and (max-width: 768px) {
+    max-width: 23rem;
+    height: 50rem;
   }
 `;
 
@@ -118,7 +134,7 @@ const Title = styled.span`
 `;
 
 const Caption = styled.span`
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 300;
   color: ${({ theme }) => theme.darkGreyColor};
 `;
