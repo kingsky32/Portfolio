@@ -146,7 +146,7 @@ const MainProjectApp = ({ id, className, background, thumb, project, caption, ca
         <Link to={`/works/${pid}`}>
           <ThumbContainer src={background}>
             <Thumb>
-              <ThumbVideo autoPlay loop muted poster={thumb}>
+              <ThumbVideo autoPlay loop muted poster={thumb} playsinline>
                 <source src={thumb} />
               </ThumbVideo>
             </Thumb>

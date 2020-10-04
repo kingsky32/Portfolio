@@ -160,7 +160,7 @@ const MainProjectPC = ({ id, className, background, thumb, project, caption, cat
         <Link to={`/works/${pid}`}>
           <ThumbContainer src={background}>
             <Thumb>
-              <ThumbVideo autoPlay loop muted poster={thumb}>
+              <ThumbVideo autoPlay loop muted poster={thumb} playsinline>
                 <source src={thumb} />
               </ThumbVideo>
             </Thumb>

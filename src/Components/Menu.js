@@ -120,7 +120,7 @@ const Menu = () => {
         </Social>
         <Social>
           <SocialLink
-            href="https://www.prismabook.com/profile.php?id=100004252961772"
+            href="https://www.facebook.com/profile.php?id=100004252961772"
             target="_blank"
           >
             <Prismabook />

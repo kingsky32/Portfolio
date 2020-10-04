@@ -248,12 +248,12 @@ const WorkDetail = ({ match: { params: { id } } }) => {
         <ThumbContainer src={work.background}>
           {work.type === "web"
             ? <Thumb>
-                <ThumbVideo autoPlay loop muted poster={work.thumb}>
+                <ThumbVideo autoPlay loop muted poster={work.thumb} playsinline>
                   <source src={work.thumb} />
                 </ThumbVideo>
               </Thumb>
             : <ThumbApp>
-                <ThumbAppVideo autoPlay loop muted poster={work.thumb}>
+                <ThumbAppVideo autoPlay loop muted poster={work.thumb} playsinline>
                   <source src={work.thumb} />
                 </ThumbAppVideo>
               </ThumbApp>}
