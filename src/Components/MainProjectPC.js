@@ -23,7 +23,7 @@ const Container = styled.div`
       transform: scale(.95);
     }
   }
-  @media screen and (max-width: 1920px) {
+  @media screen and (max-width: 1440px) {
     width: 100%;
   }
   @media screen and (max-width: 768px) {
@@ -39,6 +39,7 @@ const ThumbContainer = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden;
 `;
 
 const Thumb = styled.div`
@@ -54,22 +55,37 @@ const Thumb = styled.div`
   margin: auto 0;
   @media screen and (max-width: 1440px) {
     width: 95%;
-    right: 0;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 100rem;
+    top: 0;
     bottom: 0;
-    left: 0;
-    margin: auto;
+    right: -30rem;
+  }
+  @media screen and (max-width: 925px) {
+    width: 95rem;
+  }
+  @media screen and (max-width: 860px) {
+    width: 90rem;
+  }
+  @media screen and (max-width: 800px) {
+    width: 86rem;
   }
   @media screen and (max-width: 768px) {
+    width: 75rem;
     height: 45rem;
   }
   @media screen and (max-width: 640px) {
-    height: 35rem;
+    width: 70rem;
   }
   @media screen and (max-width: 540px) {
-    height: 30rem;
+    width: 65rem;
+  }
+  @media screen and (max-width: 480px) {
+    width: 62rem;
   }
   @media screen and (max-width: 425px) {
-    height: 25rem;
+    width: 58rem;
   }
 `;
 

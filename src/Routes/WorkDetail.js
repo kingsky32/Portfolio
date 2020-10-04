@@ -17,17 +17,26 @@ const ProjectContainer = styled.div`
   align-items: center;
   height: 100vh;
   margin-bottom: 35rem;
+  @media screen and (max-width: 768px) {
+    flex-flow: column nowrap;
+    height: 100rem;
+    align-items: flex-start;
+  }
 `;
 
 const ThumbContainer = styled.div`
   width: 100%;
   height: 100%;
   flex: 1;
+  overflow: hidden;
   background-image: url(${({ src }) => src});
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 5rem;
+  }
 `;
 
 const Thumb = styled.div`
@@ -41,6 +50,18 @@ const Thumb = styled.div`
   right: 1rem;
   bottom: 3rem;
   margin: auto 0;
+  @media screen and (max-width: 768px) {
+    width: 100rem;
+    height: 50rem;
+    left: 5rem;
+    right: 0;
+    margin: auto;
+  }
+  @media screen and (max-width: 425px) {
+    width: 85rem;
+    height: 35rem;
+    left: 3rem;
+  }
 `;
 
 const ThumbVideo = styled.video`
@@ -54,6 +75,12 @@ const ThumbVideo = styled.video`
   margin: auto 0;
   object-fit: cover;
   ${({ theme }) => theme.transition};
+  @media screen and (max-width: 768px) {
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
 `;
 
 const ThumbApp = styled.div`
@@ -149,11 +176,19 @@ const Tool = styled.li`
 const NextProject = styled(MainProjectPC)`
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 1440px) {
+    width: 95%;
+    margin: 0 auto;
+  }
 `;
 
 const NextProjectApp = styled(MainProjectApp)`
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 1440px) {
+    width: 95%;
+    margin: 0 auto;
+  }
 `;
 
 const LinkContainer = styled.div``;

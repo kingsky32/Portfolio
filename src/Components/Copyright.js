@@ -11,6 +11,9 @@ const Container = styled.span`
   @media screen and (max-width: 1024px) {
     right: -9rem;
   }
+  @media screen and (max-width: 425px) {
+    display: none;
+  }
 `;
 
 const Copyright = ({ id }) => {

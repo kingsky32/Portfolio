@@ -6,6 +6,12 @@ import ProfileImg from "../Assets/profile-img.jpg";
 const Container = styled.div`
   width: 60%;
   margin: 0 auto;
+  @media screen and (max-width: 1024px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 425px) {
+    width: 90%;
+  }
 `;
 
 const Title = styled.h2`
@@ -20,7 +26,15 @@ const ProfileContainer = styled.div`
   flex-flow: column nowrap;
 `;
 
-const ProfilePicture = styled.div`width: 60%;`;
+const ProfilePicture = styled.div`
+  width: 60%;
+  @media screen and (max-width: 1440px) {
+    width: 85%;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+`;
 
 const Picture = styled.img`width: 100%;`;
 
@@ -32,6 +46,11 @@ const ContentContainer = styled.div`
   position: relative;
   align-self: flex-end;
   bottom: 20rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding: 5rem 0;
+    bottom: 0;
+  }
 `;
 
 const ContentTitle = styled.h5`

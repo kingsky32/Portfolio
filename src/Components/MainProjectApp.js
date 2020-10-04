@@ -24,7 +24,7 @@ const Container = styled.div`
       transform: scale(.95);
     }
   }
-  @media screen and (max-width: 1920px) {
+  @media screen and (max-width: 1440px) {
     width: 100%;
   }
   @media screen and (max-width: 768px) {

@@ -7,6 +7,9 @@ import useInput from "../Hooks/useInput";
 const Container = styled.div`
   width: 60%;
   margin: 0 auto;
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 const Title = styled.h2`
@@ -26,6 +29,9 @@ const FormContainer = styled.form`
   width: 60%;
   display: flex;
   flex-flow: column nowrap;
+  @media screen and (max-width: 1440px) {
+    width: 100%;
+  }
 `;
 
 const FormRow = styled.div`
@@ -34,16 +40,34 @@ const FormRow = styled.div`
   &:not(:last-child) {
     margin-bottom: 2rem;
   }
+  @media screen and (max-width: 425px) {
+    width: 100%;
+    flex-flow: column nowrap;
+  }
 `;
 
 const Label = styled.label`
   width: 15rem;
   font-size: 1.5rem;
+  @media screen and (max-width: 425px) {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 `;
 
-const Input = styled.input`flex: 1;`;
+const Input = styled.input`
+  flex: 1;
+  @media screen and (max-width: 425px) {
+    width: 100%;
+  }
+`;
 
-const Textarea = styled.textarea`flex: 1;`;
+const Textarea = styled.textarea`
+  flex: 1;
+  @media screen and (max-width: 425px) {
+    width: 100%;
+  }
+`;
 
 const Submit = styled(Button)`
   align-self: flex-end;
