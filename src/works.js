@@ -19,7 +19,7 @@ export const mainWorks = [
     caption: "Instaclone (GraphQL + Hooks)",
     meta: ["July 2020 (5 weeks)", "Develop"],
     tools: ["React", "GraphQL", "Prisma"],
-    page: "http://prismagram.kingsky32.co.kr/",
+    page: "http://prismagram.seung-ju.com/",
     github: "https://github.com/kingsky32/prismagram-frontend"
   },
   {
@@ -33,7 +33,7 @@ export const mainWorks = [
     caption: "Prismabook clone with Express + Prisma + React",
     meta: ["September 2020 (3 weeks)", "Develop"],
     tools: ["React", "GraphQL", "Prisma"],
-    page: "http://prismabook.kingsky32.co.kr/",
+    page: "http://prismabook.seung-ju.com/",
     github: "https://github.com/kingsky32/prismabook-frontend"
   },
   {
@@ -47,7 +47,7 @@ export const mainWorks = [
     caption: "Cloning Twitter with React and Firebase",
     meta: ["September 2020 (3 weeks)", "Develop"],
     tools: ["React", "Firebase"],
-    page: "http://nwitter.kingsky32.co.kr/",
+    page: "http://nwitter.seung-ju.com/",
     github: "https://github.com/kingsky32/nwitter"
   },
   {
@@ -77,7 +77,7 @@ export const works = [
     caption: "Instaclone (GraphQL + Hooks)",
     meta: ["July 2020 (5 weeks)", "Develop"],
     tools: ["React", "GraphQL", "Prisma"],
-    page: "http://prismagram.kingsky32.co.kr/",
+    page: "http://prismagram.seung-ju.com/",
     github: "https://github.com/kingsky32/prismagram-frontend"
   },
   {
@@ -91,7 +91,7 @@ export const works = [
     caption: "Prismabook clone with Express + Prisma + React",
     meta: ["September 2020 (3 weeks)", "Develop"],
     tools: ["React", "GraphQL", "Prisma"],
-    page: "http://prismabook.kingsky32.co.kr/",
+    page: "http://prismabook.seung-ju.com/",
     github: "https://github.com/kingsky32/prismabook-frontend"
   },
   {
@@ -105,7 +105,7 @@ export const works = [
     caption: "Cloning Twitter with React and Firebase",
     meta: ["September 2020 (3 weeks)", "Develop"],
     tools: ["React", "Firebase"],
-    page: "http://nwitter.kingsky32.co.kr/",
+    page: "http://nwitter.seung-ju.com/",
     github: "https://github.com/kingsky32/nwitter"
   },
   {
